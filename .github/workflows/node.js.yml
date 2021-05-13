@@ -26,16 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: mkdir ./dist
-    - run: mkdir ./dist/__appImage-x64
-    - run: npm run build-linux-ai
-    - run: ls ./dist
     
-    - uses: "marvinpinto/action-automatic-releases@latest"
+    - name: Electron Builder Action
+      uses: samuelmeuli/action-electron-builder@v1.6.0
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest"
-        prerelease: true
-        title: "Revolt Client (Development Build)"
-        files: |
-          *.AppImage
+        github_token: ${{ secrets.github_token }}
+
