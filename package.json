@@ -1,0 +1,18 @@
+{
+  "name": "revolt",
+  "version": "0.0.1",
+  "description": "Revolt Client in Electron",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "fnuer",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.7",
+    "electron-builder": "^22.11.3"
+  },
+  "dependencies": {
+    "custom-electron-titlebar": "^3.2.6"
+  }
+}

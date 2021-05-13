@@ -1,0 +1,38 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-width: 250px;
+    width: auto !important;
+    width: 250px;
+    
+}
+
+.container-after-titlebar {
+    inset: 22px 0 0 !important;
+}
+
+.window-controls-container {
+    height: 22px !important;
+    padding-top: 0;
+}
+
+.titlebar {
+    font-family: OpenSans;
+    font-size: 2px;
+    height: 22px !important;
+}
+
+
+
+.window-title {
+    
+    content: "";
+    font-size: 0 !important;
+    background-image: url('../img/logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 12px;
+    width: 60px;
+    
+    margin-left: 8px !important;
+}
