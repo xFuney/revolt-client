@@ -26,6 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
+    - run: mkdir ./dist
+    - run: mkdir ./dist/__appImage-x64
     
     - name: Electron Builder Action
       uses: samuelmeuli/action-electron-builder@v1.6.0
