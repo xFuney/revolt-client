@@ -8,6 +8,8 @@ const {app, Menu} = require("electron");
 const version_info = require("./version_info")
 const Constants = require('../common/Constants')
 
+const Logger = require('../common/Logging.js')
+
 // holdover from discord to fix pulseaudio latency.
 if (process.platform === 'linux') {
     if (process.env.PULSE_LATENCY_MSEC === undefined) {
@@ -20,5 +22,5 @@ if (process.platform == "win32") {
     app.setAppUserModelId(Constants.APP_ID)
 }
 
-console.log("MainWindow handoff.")
+Logger.log("bootstrap", "Handing off to the Window handler...")
 require('./main_window.js')
