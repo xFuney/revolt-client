@@ -18,8 +18,8 @@ var titlebar;
 menu.append(new remote.MenuItem({
     label: '',
     submenu: [{
-        label: 'About',
-        click: () => alert("Revolt Client (Electron), written by fnuer.")
+        label: 'Settings',
+        click: () => ipcRenderer.send("settings-window")
     }, {
         label: 'Quit',
         click: () => ipcRenderer.send("appQuit")
@@ -39,4 +39,5 @@ if (process.platform != "linux" || Config.Config_Get("linux_top_bar_toggle") ) {
     titlebar.updateMenuPosition('right');
 }
 
-
+var webview = document.getElementById("webview");
+webview.addEventListener("dom-ready", function(){ webview.openDevTools(); });

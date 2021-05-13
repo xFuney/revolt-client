@@ -11,7 +11,7 @@
   "build": {
     "productName": "revolt",
     "artifactName": "revolt_client-${version}",
-    "appId": "com.revolt.revolt-client",
+    "appId": "com.revolt.revolt-client-electron",
     "linux": {
       "target": [
         "appImage"
