@@ -29,4 +29,12 @@ jobs:
     - run: mkdir ./dist
     - run: mkdir ./dist/__appImage-x64
     - run: npm run build-linux-ai
-    - run: npm test
+    
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Revolt Client (Development Build)"
+        files: |
+          *.appImage
