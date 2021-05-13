@@ -1,21 +1,42 @@
 var remote = require("electron").remote;
 
+var Menua = require('electron').Menu
+
 var ipcRenderer = require("electron").ipcRenderer;
 
 var browserWindow = require("electron").BrowserWindow;
 
+const path = require("path")
+
 const menu = new remote.Menu();
+const Config = require(path.join(__dirname, "../", "../", "common", "Configuration"))
 
 const customTitlebar = require('custom-electron-titlebar');
 
 var titlebar;
 
-if (process.platform != "linux") {
-    stitlebar = new customTitlebar.Titlebar({
-        backgroundColor: customTitlebar.Color.fromHex('#202020'),
+menu.append(new remote.MenuItem({
+    label: '',
+    submenu: [{
+        label: 'About',
+        click: () => alert("Revolt Client (Electron), written by fnuer.")
+    }, {
+        label: 'Quit',
+        click: () => ipcRenderer.send("appQuit")
+    }]
+}));
+
+if (process.platform != "linux" || Config.Config_Get("linux_top_bar_toggle") ) {
+    
+    titlebar = new customTitlebar.Titlebar({
+        backgroundColor: customTitlebar.Color.fromHex(Config.Config_Get("global_top_bar_hex")),
         hideWhenClickingClose: true,
-        menu: menu
+        menu: menu,
     });
+
+    
+
+    titlebar.updateMenuPosition('right');
 }
 
 

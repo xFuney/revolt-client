@@ -4,35 +4,74 @@ html, body {
     min-width: 250px;
     width: auto !important;
     width: 250px;
-    
+}
+
+body {
+    display: flex;
 }
 
 .container-after-titlebar {
     inset: 22px 0 0 !important;
+
+
 }
 
 .window-controls-container {
     height: 22px !important;
     padding-top: 0;
+    
 }
 
 .titlebar {
-    font-family: OpenSans;
-    font-size: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 0px;
+    padding: 0 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    zoom: 1;
+    line-height: 22px !important;
     height: 22px !important;
+    display: flex;
+    z-index: 99999;
+
+    font-family: OpenSans;
+    color: white;
 }
 
 
 
-.window-title {
-    
-    content: "";
-    font-size: 0 !important;
+.menubar-menu-button {
+    padding-top: 10px !important;
+    margin-top: 0 !important;
+    font-size: 12px !important;
     background-image: url('../img/logo.svg');
     background-size: contain;
     background-repeat: no-repeat;
+    background-position-y: 8px;
     height: 12px;
-    width: 60px;
+    width: 64px !important;
+
+ 
+    height: 26px;
     
+   
+    float: left;
+
     margin-left: 8px !important;
+}
+
+.menubar-menu-button:hover {
+    background-image: url('../img/logo.svg');
+}
+
+.window-title {
+    font-size: 0 !important;
 }

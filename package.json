@@ -17,6 +17,9 @@
         "appImage"
       ],
       "category": "Network"
+    },
+    "win": {
+      "target": "portable"
     }
   },
   "author": "fnuer <funey@dsrt-int.net>",
