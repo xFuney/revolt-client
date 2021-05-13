@@ -22,5 +22,6 @@ if (process.platform == "win32") {
     app.setAppUserModelId(Constants.APP_ID)
 }
 
-Logger.log("bootstrap", "Handing off to the Window handler...")
+Logger.log("bootstrap", "Handing off to the Window handler script...")
+
 require('./main_window.js')
