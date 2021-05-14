@@ -10,95 +10,63 @@ html, body {
     color: white;
     background-color: #242424;
     font-family: OpenSans, sans-serif;
+
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
 }
 
-.app {
-    display: flex;
+hr {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 1px solid #c8c8c8;
 }
-
-.settings-side-left {
-    flex: 1 0 auto;
-    background-color: #1E1E1E;
-    width: 240px;
-    height: 100vh
-}
-
-.settings-side-right {
-    flex: 0 1 auto;
-    background-color: transparent;
-    height: 100vh;
-    width: 100%;
-
-    padding-left: 20px;
-    padding-top: 20px;
-}
-
-.settings-sidebar {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-
-    padding-left: 20px;
-    padding-top: 20px;
-    
-}
-
-.settings-header {
-    font-weight: 700;
-    color: #C8C8C8;
+h1 {
     font-size: 12px;
-    padding-bottom: 10px;
+    padding-left: 2px;
 }
 
-.settings-footer {
-    font-weight: 700;
-    color: #C8C8C8;
+p {
     font-size: 12px;
-    font-family: monospace;
-    width: 190px;
-}
-
-.settings-separator {
-    font-weight: 700;
-    color: #C8C8C8;
-    font-size: 12px;
-    padding-top: 13px;
-    margin-bottom: 12px;
-
-    width: 196px;
-    border-bottom: 1px solid #F6F6F6;
+    color: gray;
+    font-style: italic;
 }
 
 .settings-item {
-    color: #848484;
-    font-size: 16px;
-
-    padding-left: 12px;
-
-    
-
-    gap: 8px;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    min-width: 0;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-direction: row;
     flex-direction: row;
+    align-items: center;
+
+    padding-bottom: 10px;
+}
+
+.settings-header {
+    padding-left: 2px;
+    width: 575px;
+}
+
+.settings-header h2 {
+    font-size: 14px;
+}
+
+.settings-option {
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 6px;
+    
     
 }
 
-.settings-item-selected {
-    -webkit-border-start: 4px solid #FD6671;
-    border-inline-start: 4px solid #FD6671;
-    border-radius: 4px;
+.settings-tickbox {
 
-    padding-top: 4px;
-    padding-bottom: 4px;
+    width: 24px;
+    height: 24px;
+}
 
-    background-color: #191919;
-    color: #F6F6F6;
-    width: 180px;
+.settings-textarea {
+
+    width: 110px;
+    margin-right: 1px;
+    height: 24px;
 }

@@ -8,38 +8,30 @@
   </head>
   <body style="overflow:hidden;">
     
-    <div class="app">
-      <div class="settings-side-left">
+    <h1>SETTINGS</h1>
+    <p>Rudimentary Developer Settings (not on brand/style)</p>
+    <hr />
 
-        <div class="settings-sidebar">
-
-          <div class="settings-header">
-            CLIENT SETTINGS
-          </div>
-
-          <div class="settings-item settings-item-selected">
-            Theming
-          </div>
-
-          <div class="settings-separator"></div>
-
-          <div class="settings-footer">
-            Client v0.0.1-dev
-          </div>
-
-          <div class="settings-footer">
-            Electron Client by @fnuer
-          </div>
-
-
+    <div class="settings-item">
+        <div class="settings-header">
+            <h2>Linux Window Manager Toggle</h2>
+            <p>If enabled, the client will use its custom top bar. If not, the Window Manager's frame will be used.</p>
         </div>
 
-      </div>
-
-      <div class="settings-side-right">
-        <p>b</p>
-      </div>
+        <div class="settings-option">
+            <input type="checkbox" class="settings-tickbox">
+        </div>
     </div>
 
+    <div class="settings-item">
+        <div class="settings-header">
+            <h2>Top Bar Hexadecimal Value</h2>
+            <p>Specifies the color for the top bar (for Linux users, only when using the custom top bar).</p>
+        </div>
+
+        <div class="settings-option">
+            <input type="textarea" class="settings-textarea">
+        </div>
+    </div>
   </body>
 </html>
