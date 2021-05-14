@@ -64,9 +64,51 @@ p {
     height: 24px;
 }
 
-.settings-textarea {
+.settings-textarea:focus {
+    border: 2px solid #FD6671;
+    outline: none;
 
-    width: 110px;
+    margin-right: -1px;
+}
+
+.settings-textarea {
+    border-radius: 3px;
+    color:white;
+    background-color: #212121;
+    width: 120px;
     margin-right: 1px;
     height: 24px;
+
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.settings-savebutton button {
+    padding-bottom: 10px;
+    padding-top: 10px;
+   
+    padding: 4px 8px;
+
+    outline: none;
+    box-shadow: none;
+    border: none;
+
+    background-color: #2D2D2D;
+    
+    color: white;
+
+    cursor: pointer;
+
+    border-radius: 6px;
+    font-size:16px;
+}
+
+.settings-savebutton button:hover {
+    background-color: #4D4D4D;
+    transition: background-color .2s ease;
 }

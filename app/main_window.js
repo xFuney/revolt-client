@@ -49,11 +49,22 @@ function createWindow () {
     Logger.log('main_window', 'Opening settings window...')
     createSettingsWindow();
   })
+
+  ipc.on('settings_restart', () => {
+    Logger.log('main_window', 'Settings has invoked an IPC relaunch. Relaunching...')
+    app.relaunch()
+    app.exit()
+  })
+
+  ipc.on('reload_main', () => {
+    Logger.log('main_window', 'Settings has invoked a main renderer reload. Sending this to main renderer.')
+    win.webContents.send('reload_main')
+  })
 }
 
 function createSettingsWindow () {
   Logger.log('main_window', 'Creating settings window...')
-  win = new BrowserWindow({
+  shwin = new BrowserWindow({
     width: 800,
     height: 600,
     frame: true,
@@ -72,8 +83,8 @@ function createSettingsWindow () {
     }
   })
 
-  win.setMenuBarVisibility(false)
-  win.loadFile(path.join(__dirname, "mw_data", "settings.html"))
+  shwin.setMenuBarVisibility(false)
+  shwin.loadFile(path.join(__dirname, "mw_data", "settings.html"))
 }
 
 app.whenReady().then(() => {
@@ -81,7 +92,7 @@ app.whenReady().then(() => {
   
   createWindow()
 
-  TrayHandler.init(win)
+  TrayHandler.init(win, WindowIcon)
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {

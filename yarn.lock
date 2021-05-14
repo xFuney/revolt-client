@@ -118,12 +118,17 @@
   "resolved" "https://registry.npmjs.org/7zip-bin/-/7zip-bin-5.1.1.tgz"
   "version" "5.1.1"
 
+"accessibility-developer-tools@^2.11.0":
+  "integrity" "sha1-PaDM6dbsY3OWS4TzXbfPw996tRQ="
+  "resolved" "https://registry.npmjs.org/accessibility-developer-tools/-/accessibility-developer-tools-2.12.0.tgz"
+  "version" "2.12.0"
+
 "ajv-keywords@^3.4.1":
   "integrity" "sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ=="
   "resolved" "https://registry.npmjs.org/ajv-keywords/-/ajv-keywords-3.5.2.tgz"
   "version" "3.5.2"
 
-"ajv@^6.12.0":
+"ajv@^6.10.0", "ajv@^6.12.0":
   "integrity" "sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g=="
   "resolved" "https://registry.npmjs.org/ajv/-/ajv-6.12.6.tgz"
   "version" "6.12.6"
@@ -564,6 +569,15 @@
   "resolved" "https://registry.npmjs.org/detect-node/-/detect-node-2.0.5.tgz"
   "version" "2.0.5"
 
+"devtron@^1.4.0":
+  "integrity" "sha1-tedIvW6Vu+cL/MaKrm/mlhGUQeE="
+  "resolved" "https://registry.npmjs.org/devtron/-/devtron-1.4.0.tgz"
+  "version" "1.4.0"
+  dependencies:
+    "accessibility-developer-tools" "^2.11.0"
+    "highlight.js" "^9.3.0"
+    "humanize-plus" "^1.8.1"
+
 "dir-compare@^2.4.0":
   "integrity" "sha512-l9hmu8x/rjVC9Z2zmGzkhOEowZvW7pmYws5CWHutg8u1JgvsKWMx7Q/UODeu4djLZ4FgW5besw5yvMQnBHzuCA=="
   "resolved" "https://registry.npmjs.org/dir-compare/-/dir-compare-2.4.0.tgz"
@@ -587,6 +601,13 @@
     "js-yaml" "^4.1.0"
   optionalDependencies:
     "dmg-license" "^1.0.8"
+
+"dmg-license@^1.0.8":
+  "integrity" "sha512-47GOb6b4yVzpovXC34heXElpH++ICg9GuWBeOTaokUNLAoAdWpE4VehudYEEtu96j2jXsgQWYf78nW7r+0Y3eg=="
+  "resolved" "https://registry.npmjs.org/dmg-license/-/dmg-license-1.0.8.tgz"
+  "version" "1.0.8"
+  dependencies:
+    "ajv" "^6.10.0"
 
 "dot-prop@^5.2.0":
   "integrity" "sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q=="
@@ -906,6 +927,11 @@
   "resolved" "https://registry.npmjs.org/has-yarn/-/has-yarn-2.1.0.tgz"
   "version" "2.1.0"
 
+"highlight.js@^9.3.0":
+  "integrity" "sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA=="
+  "resolved" "https://registry.npmjs.org/highlight.js/-/highlight.js-9.18.5.tgz"
+  "version" "9.18.5"
+
 "hosted-git-info@^4.0.2":
   "integrity" "sha512-c9OGXbZ3guC/xOlCg1Ci/VgWlwsqDv1yMQL1CWqXDL0hDjXuNcq0zuR4xqPSuasI3kqFDhqSyTjREz5gzq0fXg=="
   "resolved" "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-4.0.2.tgz"
@@ -917,6 +943,11 @@
   "integrity" "sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ=="
   "resolved" "https://registry.npmjs.org/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz"
   "version" "4.1.0"
+
+"humanize-plus@^1.8.1":
+  "integrity" "sha1-pls0RZrWNnrbs3B6gqPJ+RYWcDA="
+  "resolved" "https://registry.npmjs.org/humanize-plus/-/humanize-plus-1.8.2.tgz"
+  "version" "1.8.2"
 
 "iconv-lite@^0.6.2":
   "integrity" "sha512-2y91h5OpQlolefMPmUlivelittSWy0rP+oYVpn6A7GwVHNE8AWzoYOBNmlwks3LobaJxgHCYZAnyNo2GgpNRNQ=="

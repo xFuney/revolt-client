@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/settings.css">
     
   </head>
-  <body style="overflow:hidden;">
+  <body style="overflow:hidden;" onload="loaded()">
     
     <h1>SETTINGS</h1>
     <p>Rudimentary Developer Settings (not on brand/style)</p>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="settings-option">
-            <input type="checkbox" class="settings-tickbox">
+            <input type="checkbox" class="settings-tickbox" id="linux-wm-checkbox">
         </div>
     </div>
 
@@ -30,8 +30,15 @@
         </div>
 
         <div class="settings-option">
-            <input type="textarea" class="settings-textarea">
+            <input type="textarea" class="settings-textarea" id="topbar-hex-input">
         </div>
     </div>
+    <hr />
+
+    <div class="settings-savebutton">
+      <button onclick="save()">Save Changes</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+    <script src="./js/settings.js"></script>
   </body>
 </html>

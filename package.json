@@ -25,6 +25,7 @@
   "author": "fnuer <funey@dsrt-int.net>",
   "license": "ISC",
   "devDependencies": {
+    "devtron": "^1.4.0",
     "electron": "^12.0.7",
     "electron-builder": "^22.11.3"
   },

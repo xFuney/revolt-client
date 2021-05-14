@@ -40,4 +40,9 @@ if (process.platform != "linux" || Config.Config_Get("linux_top_bar_toggle") ) {
 }
 
 var webview = document.getElementById("webview");
-webview.addEventListener("dom-ready", function(){ webview.openDevTools(); });
+//webview.addEventListener("dom-ready", function(){ webview.openDevTools(); });
+
+ipcRenderer.on('reload_main', () => {
+    console.log("Reloading...")
+    location.reload()
+})
