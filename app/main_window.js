@@ -27,10 +27,10 @@ function createWindow () {
     width: 800,
     height: 600,
     frame: frame_toggle,
-    minWidth: 800,
-    minHeight: 600,
+    minWidth: Config.Config_Get("minimum_window_size_toggle") ? 800 : 0,
+    minHeight: Config.Config_Get("minimum_window_size_toggle") ? 600 : 0,
     icon: WindowIcon,
-    backgroundColor: "#191919",
+    backgroundColor: "#242424",
     /*webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }*/
@@ -60,6 +60,12 @@ function createWindow () {
     Logger.log('main_window', 'Settings has invoked a main renderer reload. Sending this to main renderer.')
     win.webContents.send('reload_main')
   })
+
+  ipc.on('change_bg', (e, newBg) => {
+    Logger.log('main_window', 'Setting has invoked a main renderer titlebar color change. Sending this to main renderer...')
+    console.log(newBg)
+    win.webContents.send('change_bg', newBg)
+  })
 }
 
 function createSettingsWindow () {
@@ -68,8 +74,8 @@ function createSettingsWindow () {
     width: 800,
     height: 600,
     frame: true,
-    minWidth: 800,
-    minHeight: 600,
+    minWidth: Config.Config_Get("minimum_window_size_toggle") ? 800 : 0,
+    minHeight: Config.Config_Get("minimum_window_size_toggle") ? 600 : 0,
     icon: WindowIcon,
     backgroundColor: "#191919",
     /*webPreferences: {

@@ -1,6 +1,7 @@
 let config = {
     linux_top_bar_toggle: false,
     global_top_bar_hex: "#202020",
+    minimum_window_size_toggle: true
 }
 
 const fs = require("fs")

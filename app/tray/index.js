@@ -1,5 +1,6 @@
 const { app, Menu, Tray, BrowserWindow } = require("electron")
 const Logger = require('../../common/Logging')
+const Config = require('../../common/Configuration')
 
 const path = require("path")
 
@@ -20,8 +21,8 @@ module.exports.init = function(win, WindowIcon) {
           width: 800,
           height: 600,
           frame: true,
-          minWidth: 800,
-          minHeight: 600,
+          minWidth: Config.Config_Get("minimum_window_size_toggle") ? 800 : 0,
+          minHeight: Config.Config_Get("minimum_window_size_toggle") ? 600 : 0,
           icon: WindowIcon,
           backgroundColor: "#191919",
           /*webPreferences: {

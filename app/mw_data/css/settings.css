@@ -14,19 +14,20 @@ html, body {
     padding-left: 10px;
     padding-top: 10px;
     padding-right: 10px;
+
 }
 
-hr {
+.settings-div hr {
     margin-bottom: 20px;
     margin-top: 10px;
     border: 1px solid #c8c8c8;
 }
-h1 {
+.settings-div h1 {
     font-size: 12px;
     padding-left: 2px;
 }
 
-p {
+.settings-div p {
     font-size: 12px;
     color: gray;
     font-style: italic;
@@ -111,4 +112,8 @@ p {
 .settings-savebutton button:hover {
     background-color: #4D4D4D;
     transition: background-color .2s ease;
+}
+
+.settings-footer {
+    padding-top: 10px;
 }
