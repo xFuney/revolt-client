@@ -47,7 +47,11 @@ webview.addEventListener('new-window', (e) => {
     require('electron').shell.openExternal(e.url)
 })
 
-webview.addEventListener("dom-ready", function(){ webview.openDevTools(); });
+let env = process.env.NODE_ENV || 'development'
+
+if (env == 'development') {
+    webview.addEventListener("dom-ready", function(){ webview.openDevTools(); });
+}
 
 ipcRenderer.on('reload_main', () => {
     console.log("Reloading...")
