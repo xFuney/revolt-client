@@ -116,3 +116,11 @@ app.on('window-all-closed', () => {
 
 
 
+setInterval( () => {
+  let met = app.getAppMetrics()
+  
+
+  if (win) {
+    win.webContents.send('metrics_update', met)
+  }
+}, 1000)

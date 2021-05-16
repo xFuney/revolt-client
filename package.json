@@ -30,6 +30,7 @@
     "electron-builder": "^22.11.3"
   },
   "dependencies": {
-    "custom-electron-titlebar": "^3.2.6"
+    "custom-electron-titlebar": "^3.2.6",
+    "moment": "^2.29.1"
   }
 }

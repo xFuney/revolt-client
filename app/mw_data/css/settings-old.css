@@ -32,7 +32,7 @@ html, body {
     padding-left: 20px;
     padding-top: 20px;
 
-    padding-right: 20px;  
+     
 }
 
 .settings-sidebar {
@@ -75,9 +75,38 @@ html, body {
     color: #848484;
     font-size: 16px;
 
-    padding-left: 12px;
+
+    padding-left: 10px;
+    
+    margin-bottom: 8px;
 
     
+    padding-top: 8px;
+    
+    width: 184px;
+    border-radius: 4px;
+
+    gap: 8px;
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    
+}
+
+.settings-item:hover {
+    background-color: #191919;
+    cursor: pointer;
+}
+
+.settings-right-item {
+
+    padding-left: 0px;
+
+    margin-bottom: 10px;
 
     gap: 8px;
     -ms-flex-positive: 1;
@@ -90,19 +119,18 @@ html, body {
     -ms-flex-direction: row;
     flex-direction: row;
     
+    
 }
 
 .settings-item-selected {
     -webkit-border-start: 4px solid #FD6671;
     border-inline-start: 4px solid #FD6671;
-    border-radius: 4px;
-
-    padding-top: 4px;
-    padding-bottom: 4px;
-
+    
     background-color: #191919;
     color: #F6F6F6;
-    width: 180px;
+
+    width: 180px !important;
+
 }
 
 h1 {
@@ -155,39 +183,85 @@ h1 {
     height: 6%;
 }
 
-/* input stuff */
-input[type=checkbox] {
-    width: 13px;
-    height: 13px;
 
-    margin: 4px;
-    width: 24px;
-    height: 24px;
-    display: grid;
-    border-radius: 4px;
-    place-items: center;
-    background: #ffffff;
-    
-    cursor: pointer;
-    font-size: 18px;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 
-    display: none;
+.settings-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding-bottom: 10px;
 }
 
-button, input, label, select, textarea {
-    display: inline-block;
-    margin: 0;
-    border: 0;
-    padding: 0;
-    width: auto;
-    vertical-align: middle;
-    white-space: normal;
-    line-height: inherit;
-    background: none;
-    color: inherit;
-    font-size: inherit;
-    font-family: inherit;
+.settings-header {
+    padding-left: 2px;
+    width: 575px;
+}
+
+.settings-header h2 {
+    font-size: 14px;
+}
+
+.settings-tickbox {
+
+    width: 24px;
+    height: 24px;
+}
+
+.settings-item-header {
+    padding-left: 2px;
+    width: 575px;
+}
+
+.settings-item-header h2 {
+    font-size: 14px;
+}
+
+.settings-item-option {
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 6px;
+    
+    
+}
+
+.settings-right-item hr {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 1px solid #c8c8c8;
+}
+.settings-right-item h1 {
+    font-size: 12px;
+    padding-left: 2px;
+}
+
+.settings-right-item p {
+    font-size: 12px;
+    color: gray;
+    font-style: italic;
+}
+
+.settings-textarea:focus {
+    border: 2px solid #FD6671;
+    outline: none;
+
+    margin-right: -1px;
+}
+
+.settings-textarea {
+    border-radius: 3px;
+    color:white;
+    background-color: #212121;
+    width: 120px;
+    margin-right: 0px;
+    height: 24px;
+
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 4px;
+
+    outline: none;
+    box-shadow: none;
+    border: none;
 }

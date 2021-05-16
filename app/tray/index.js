@@ -67,6 +67,9 @@ module.exports.init = function(win, WindowIcon) {
             contextMenu = Menu.buildFromTemplate([
               { label: 'Revolt Client', enabled: false, icon: path.join(__dirname, "tray_images", "revolt-logo-16.png")},
               { type: 'separator'},
+              { type: 'normal', label: 'Open', click: linux_open},
+              { type: 'normal', label: 'Settings', click: settings_open},
+              { type: 'separator' },
               { label: 'Revolt Website', type: 'normal', click: openwebsite},
               { type: 'separator' },
               { label: 'Quit', type: 'normal', role: "quit" },

@@ -5,10 +5,12 @@
     <link rel="stylesheet" type="text/css" href="css/font.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
-  <body style="overflow:hidden;">
-    <div class="titlebar-after">
-      <webview id="webview" src="https://app.revolt.chat" style="position:absolute;width:100%;height:100%;"></webview>
-    </div>
+  <body style="overflow:hidden;" onload="load();">
+    <div id="app">
+
+    </div> 
+    <script src="js/moment.min.js"></script>
     <script src="js/menu-bar.js"></script>
+    <script src="js/dev-menu.js"></script>
   </body>
 </html>

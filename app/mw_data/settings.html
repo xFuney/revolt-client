@@ -47,6 +47,37 @@
                 <input type="textarea" class="settings-textarea" id="topbar-hex-input">
             </div>
         </div>
+
+        <div class="settings-item">
+            <div class="settings-header">
+                <h2>Client Version</h2>
+                <p>Specifies the version of client to be used (Nightly or Stable). Requires a client reload (not a restart) to be applied.</p>
+         
+            </div>
+    
+            <div class="settings-option">
+                <select name="client-version" id="client-version" class="settings-dropdown">
+                    <option value="stable">Stable</option>
+                    <option value="nightly">Nightly</option>
+                    
+                  </select>
+
+                
+            </div>
+        </div>
+
+        <div class="settings-item">
+            <div class="settings-header">
+                <h2>Developer Mode</h2>
+                <p>Enables some development features, as well as a Developer Tools display for the client webview. Requires a restart of the client to be applied.</p>
+                
+            </div>
+    
+            <div class="settings-option">
+                <input type="checkbox" class="settings-tickbox" id="devmode-checkbox">
+            </div>
+        </div>
+
         <hr />
     
         <div class="settings-savebutton">

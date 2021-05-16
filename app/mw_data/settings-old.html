@@ -3,7 +3,7 @@
   <head>
     <title>Revolt - Settings</title>
     <link rel="stylesheet" type="text/css" href="css/font.css">
-    <link rel="stylesheet" type="text/css" href="css/settings.css">
+    <link rel="stylesheet" type="text/css" href="css/settings-old.css">
     
   </head>
   <body style="overflow:hidden;">
@@ -19,6 +19,10 @@
 
           <div class="settings-item settings-item-selected">
             Theming
+          </div>
+
+          <div class="settings-item">
+            Developer Options
           </div>
 
           <div class="settings-separator"></div>
@@ -41,16 +45,42 @@
           <h1>Theming</h1>
         </div>
 
-        <div class="setting-list-item">
-          <div class="settings-list-item-head">
-            <h2>Linux Frame Selection</h2>
-            <p>When enabled, the custom Revolt titlebar will be used in place of your Window Manager's window frame.</p>
+        <div class="settings-right-item" id="cat-appearance">
+          <div class="settings-item-header">
+              <h2>Linux Window Manager Toggle</h2>
+              <p>If enabled, the client will use its custom top bar. If not, the Window Manager's frame will be used.</p>
+              <p>Requires a restart of the client to be applied.</p>
           </div>
-
-          <div class="settings-list-item-tick">
-            <input type="checkbox">
+  
+          <div class="settings-item-option">
+              <input type="checkbox" class="settings-tickbox" id="linux-wm-checkbox" />
           </div>
         </div>
+
+        <div class="settings-right-item">
+          <div class="settings-item-header">
+              <h2>Minimum Window Size Toggle</h2>
+              <p>If enabled, the client will enforce a minimum window size. Otherwise, no minimum window size <br />will be enforced. Requires a restart of the client to be applied.</p>
+              
+          </div>
+  
+          <div class="settings-item-option">
+              <input type="checkbox" class="settings-tickbox" id="min-winsize-checkbox">
+          </div>
+      </div>
+  
+      <div class="settings-right-item">
+          <div class="settings-item-header">
+              <h2>Top Bar Hexadecimal Value</h2>
+              <p>Specifies the color for the top bar (for Linux users, only when using the custom top bar).</p>
+          </div>
+  
+          <div class="settings-item-option">
+              <input type="textarea" class="settings-textarea" id="topbar-hex-input">
+          </div>
+      </div>
+
+      
       </div>
 
     </div>
