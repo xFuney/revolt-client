@@ -1,3 +1,5 @@
+"use strict";
+
 var remote = require("electron").remote;
 
 var Menua = require('electron').Menu
@@ -5,6 +7,7 @@ var Menua = require('electron').Menu
 var ipcRenderer = require("electron").ipcRenderer;
 
 var browserWindow = require("electron").BrowserWindow;
+
 
 const path = require("path")
 

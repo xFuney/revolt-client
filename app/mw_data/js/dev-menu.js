@@ -1,4 +1,4 @@
-
+"use strict";
 //const Config = require(path.join(__dirname, "../", "../", "common", "Configuration"))
 
 var open = false;

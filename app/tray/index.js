@@ -1,6 +1,10 @@
+"use strict";
+
 const { app, Menu, Tray, BrowserWindow } = require("electron")
 const Logger = require('../../common/Logging')
 const Config = require('../../common/Configuration')
+
+const settings = require('../settings_window');
 
 const path = require("path")
 
@@ -12,40 +16,18 @@ module.exports.init = function(win, WindowIcon) {
       }
       
       function linux_open() {
-        win.show()
-      }
-      
-      function settings_open() {
-        Logger.log('tray', 'Creating settings window...')
-        win = new BrowserWindow({
-          width: 800,
-          height: 600,
-          frame: true,
-          minWidth: Config.Config_Get("minimum_window_size_toggle") ? 800 : 0,
-          minHeight: Config.Config_Get("minimum_window_size_toggle") ? 600 : 0,
-          icon: WindowIcon,
-          backgroundColor: "#191919",
-          /*webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
-          }*/
-          webPreferences: {
-              webviewTag: true,
-              nodeIntegration: true,
-              enableRemoteModule: true,
-              contextIsolation: false,
-          }
-        })
-      
-        win.setMenuBarVisibility(false)
-        win.loadFile(path.join(__dirname, "../", "mw_data", "settings.html"))
+        global.win.show()
       }
 
+      function settings_open() {
+        settings.create();
+      }
       app.whenReady().then(() => {
         Logger.log('tray', 'App ready, initialising tray...')
-          tray = new Tray( path.join(__dirname, "tray_images", "revolt-logo.png") )
+          let tray = new Tray( path.join(__dirname, "tray_images", "revolt-logo.png") )
       
           tray.on("click", () => {
-              win.show();
+              global.win.show();
           })
       
           var contextMenu;

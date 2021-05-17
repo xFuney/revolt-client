@@ -1,18 +1,18 @@
+"use strict";
+
 const { app, BrowserWindow, Menu, Tray, nativeImage } = require('electron')
-const Logger = require('../common/Logging.js')
+const Logger = require('../common/Logging')
 
 const Config = require('../common/Configuration')
 
 const TrayHandler = require('./tray')
 
-const ipc = require('electron').ipcMain;
+const ipcHandler = require('./ipc')
 
 const path = require('path')
 
 var WindowIcon = nativeImage.createFromPath( path.join(__dirname, "mw_data", "img", "revolt-logo.png") );
 WindowIcon.setTemplateImage(true);
-
-var win;
 
 function createWindow () {
   let frame_toggle = false
@@ -23,7 +23,7 @@ function createWindow () {
   }
 
   Logger.log('main_window', 'Creating main window...')
-  win = new BrowserWindow({
+  global.win = new BrowserWindow({
     width: 800,
     height: 600,
     frame: frame_toggle,
@@ -42,55 +42,9 @@ function createWindow () {
     }
   })
 
-  win.setMenuBarVisibility(false)
-  win.loadFile(path.join(__dirname, "mw_data", "index.html"))
+  global.win.setMenuBarVisibility(false)
+  global.win.loadFile(path.join(__dirname, "mw_data", "index.html"))
 
-  ipc.on('settings-window', () => {
-    Logger.log('main_window', 'Opening settings window...')
-    createSettingsWindow();
-  })
-
-  ipc.on('settings_restart', () => {
-    Logger.log('main_window', 'Settings has invoked an IPC relaunch. Relaunching...')
-    app.relaunch()
-    app.exit()
-  })
-
-  ipc.on('reload_main', () => {
-    Logger.log('main_window', 'Settings has invoked a main renderer reload. Sending this to main renderer.')
-    win.webContents.send('reload_main')
-  })
-
-  ipc.on('change_bg', (e, newBg) => {
-    Logger.log('main_window', 'Setting has invoked a main renderer titlebar color change. Sending this to main renderer...')
-    console.log(newBg)
-    win.webContents.send('change_bg', newBg)
-  })
-}
-
-function createSettingsWindow () {
-  Logger.log('main_window', 'Creating settings window...')
-  shwin = new BrowserWindow({
-    width: 800,
-    height: 600,
-    frame: true,
-    minWidth: Config.Config_Get("minimum_window_size_toggle") ? 800 : 0,
-    minHeight: Config.Config_Get("minimum_window_size_toggle") ? 600 : 0,
-    icon: WindowIcon,
-    backgroundColor: "#191919",
-    /*webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }*/
-    webPreferences: {
-        webviewTag: true,
-        nodeIntegration: true,
-        enableRemoteModule: true,
-        contextIsolation: false,
-    }
-  })
-
-  shwin.setMenuBarVisibility(false)
-  shwin.loadFile(path.join(__dirname, "mw_data", "settings.html"))
 }
 
 app.whenReady().then(() => {

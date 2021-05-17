@@ -1,3 +1,4 @@
+"use strict";
 var remote = require("electron").remote;
 
 var Menua = require('electron').Menu
